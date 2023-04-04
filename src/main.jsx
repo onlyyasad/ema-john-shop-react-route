@@ -10,12 +10,18 @@ import Order from './component/Order';
 import OrderReview from './component/OrderReview';
 import ManageInventory from './component/ManageInventory';
 import Login from './component/Login';
+import Home from './component/Home';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Order></Order>,
+    element: <Home></Home>,
     children: [
+      {
+        path: '/',
+        element: <Order></Order>,
+        loader: () => fetch('products.json')
+      },
       {
         path: 'order-review',
         element: <OrderReview></OrderReview>
