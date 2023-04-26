@@ -13,6 +13,9 @@ const Cart = ({cart, handleClearCart, children}) => {
     const tax = total * 0.1;
     const grandTotal = total + shipping + tax;
 
+    let message;
+    
+
     return (
         <div className='flex flex-col gap-4'>
             <h1 className='text-xl font-bold text-center'>Order Summery</h1>
