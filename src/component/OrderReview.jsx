@@ -15,7 +15,7 @@ const OrderReview = () => {
         deleteShoppingCart();
     }
     const handleRemoveProduct =(id) =>{
-        const remaining = cart.filter(pd => pd.id !== id);
+        const remaining = cart.filter(pd => pd._id !== id);
         setCart(remaining);
         removeFromDb(id)
     }
@@ -26,7 +26,7 @@ const OrderReview = () => {
         <div className='md:grid grid-cols-12 p-10'>
             <div className='col-span-7 flex flex-col gap-4 p-6'>
                 {
-                    cart.map(product => <ReviewItems key={product.id} product={product} handleRemoveProduct={handleRemoveProduct}></ReviewItems>)
+                    cart.map(product => <ReviewItems key={product._id} product={product} handleRemoveProduct={handleRemoveProduct}></ReviewItems>)
                 }
             </div>
             <div className='col-span-5 sticky top-0 h-screen'>

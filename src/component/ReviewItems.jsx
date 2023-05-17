@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ReviewItems = ({ product, handleRemoveProduct }) => {
-    const {id, img, price, name, shipping, quantity} = product;
+    const {_id, img, price, name, shipping, quantity} = product;
     return (
         <div className="card flex-row items-center bg-base-100 border-2 p-4">
             <figure><img className='h-24 rounded-xl' src={img} alt="Movie" /></figure>
@@ -11,7 +11,7 @@ const ReviewItems = ({ product, handleRemoveProduct }) => {
                 <p>Shipping: <span>${shipping}</span></p>
                 <p>Quantity: <span>{quantity}</span></p>
             </div>
-            <button onClick={() => handleRemoveProduct(id)} className="btn-circle btn-primary">X</button>
+            <button onClick={() => handleRemoveProduct(_id)} className="btn-circle btn-primary">X</button>
         </div>
     );
 };
